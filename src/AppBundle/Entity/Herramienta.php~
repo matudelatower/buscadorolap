@@ -1,0 +1,110 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Herramienta
+ *
+ * @ORM\Table(name="herramienta")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\HerramientaRepository")
+ */
+class Herramienta
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255, unique=true)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="empresa", type="string", length=255, nullable=true)
+     */
+    private $empresa;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="libre", type="integer")
+     */
+    private $libre;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="windows_xp", type="integer")
+     */
+    private $windowsXp;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="web", type="integer")
+     */
+    private $web;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="facilidad_instalacion", type="integer")
+     */
+    private $facilidadInstalacion;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="curva_aprendizaje", type="integer")
+     */
+    private $curvaAprendizaje;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="no_utiliza_sql", type="integer")
+     */
+    private $noUtilizaSql;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="extension_excel", type="integer")
+     */
+    private $extensionExcel;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="cliente_servidor", type="integer")
+     */
+    private $clienteServidor;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="ayuda_online", type="integer")
+     */
+    private $ayudaOnline;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="etl", type="integer")
+     */
+    private $etl;
+
+
+
+}

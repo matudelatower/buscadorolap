@@ -1,0 +1,110 @@
+{% extends 'ThemeBundle:Default:layout_base.html.twig' %}
+
+{% block body %}
+    <h1>Organizacion</h1>
+
+    <table>
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ organizacion.id }}</td>
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <td>{{ organizacion.nombre }}</td>
+        </tr>
+        <tr>
+            <th>Cuit</th>
+            <td>{{ organizacion.cuit }}</td>
+        </tr>
+        <tr>
+            <th>Domicilio</th>
+            <td>{{ organizacion.domicilio }}</td>
+        </tr>
+        <tr>
+            <th>Localidad</th>
+            <td>{{ organizacion.localidad }}</td>
+        </tr>
+        <tr>
+            <th>Provincia/estado</th>
+            <td>{{ organizacion.provinciaEstado }}</td>
+        </tr>
+        <tr>
+            <th>Pais</th>
+            <td>{{ organizacion.pais }}</td>
+        </tr>
+        <tr>
+            <th>Libre</th>
+            <td>{{ organizacion.libre }}</td>
+        </tr>
+        <tr>
+            <th>Windows XP</th>
+            <td>{{ organizacion.windowsXp }}</td>
+        </tr>
+        <tr>
+            <th>Web</th>
+            <td>{{ organizacion.web }}</td>
+        </tr>
+        <tr>
+            <th>Facilidad instalacion</th>
+            <td>{{ organizacion.facilidadInstalacion }}</td>
+        </tr>
+        <tr>
+            <th>Curva aprendizaje</th>
+            <td>{{ organizacion.curvaAprendizaje }}</td>
+        </tr>
+        <tr>
+            <th>Noutilizasql</th>
+            <td>{{ organizacion.noUtilizaSql }}</td>
+        </tr>
+        <tr>
+            <th>Extension excel</th>
+            <td>{{ organizacion.extensionExcel }}</td>
+        </tr>
+        <tr>
+            <th>Cliente/servidor</th>
+            <td>{{ organizacion.clienteServidor }}</td>
+        </tr>
+        <tr>
+            <th>Ayuda online</th>
+            <td>{{ organizacion.ayudaOnline }}</td>
+        </tr>
+        <tr>
+            <th>Etl</th>
+            <td>{{ organizacion.etl }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    {% if arrayResultado is defined %}
+        <div class="row">
+            <div class="col-xs-6">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Puntuacion</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {#{{ dump(arrayResultado) }}#}
+                    {% for key,arrayRes in arrayResultado |slice(0, 3) %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ key }}</td>
+                            <td>{{ arrayRes }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% endif %}
+    <a class="btn btn-default" href="{{ path('organizacion_index') }}">Volver al Listado</a>
+    <a class="btn btn-primary" href="{{ path('organizacion_edit', { 'id': organizacion.id }) }}">Editar</a>
+    <a class="btn btn-primary" href="{{ path('organizacion_new') }}">Nuevo</a>
+    {{ form_start(delete_form) }}
+    <input class="btn btn-danger" type="submit" value="Eliminar">
+    {{ form_end(delete_form) }}
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'ThemeBundle:Default:layout_base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+
+                    <div class="card-title">
+                        <div class="title">Listado de Organizaciones</div>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <table class="datatable table table-striped" cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Cuit</th>
+                            <th>Domicilio</th>
+                            <th>Localidad</th>
+                            <th>Provinciaestado</th>
+                            <th>Pais</th>
+                            <th>Libre</th>
+                            <th>Windowsxp</th>
+                            <th>Web</th>
+                            <th>Facilidadinstalacion</th>
+                            <th>Curvaaprendizaje</th>
+                            <th>Noutilizasql</th>
+                            <th>Extensionexcel</th>
+                            <th>Clienteservidor</th>
+                            <th>Ayudaonline</th>
+                            <th>Etl</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for organizacion in organizacions %}
+                            <tr>
+                                <td>
+                                    <a href="{{ path('organizacion_show', { 'id': organizacion.id }) }}">{{ organizacion.id }}</a>
+                                </td>
+                                <td>{{ organizacion.nombre }}</td>
+                                <td>{{ organizacion.cuit }}</td>
+                                <td>{{ organizacion.domicilio }}</td>
+                                <td>{{ organizacion.localidad }}</td>
+                                <td>{{ organizacion.provinciaEstado }}</td>
+                                <td>{{ organizacion.pais }}</td>
+                                <td>{{ organizacion.libre }}</td>
+                                <td>{{ organizacion.windowsXp }}</td>
+                                <td>{{ organizacion.web }}</td>
+                                <td>{{ organizacion.facilidadInstalacion }}</td>
+                                <td>{{ organizacion.curvaAprendizaje }}</td>
+                                <td>{{ organizacion.noUtilizaSql }}</td>
+                                <td>{{ organizacion.extensionExcel }}</td>
+                                <td>{{ organizacion.clienteServidor }}</td>
+                                <td>{{ organizacion.ayudaOnline }}</td>
+                                <td>{{ organizacion.etl }}</td>
+                                <td>
+                                    <a class="btn btn-default"
+                                       href="{{ path('organizacion_show', { 'id': organizacion.id }) }}"><span
+                                                class="fa fa-eye"></span></a>
+                                    <a class="btn btn-default"
+                                       href="{{ path('organizacion_edit', { 'id': organizacion.id }) }}"><span
+                                                class="fa fa-edit"></span></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-primary" href="{{ path('organizacion_new') }}">Nueva</a>
+{% endblock %}

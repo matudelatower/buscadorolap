@@ -1,0 +1,24 @@
+herramientas_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Herramienta:index" }
+    methods:  GET
+
+herramientas_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Herramienta:show" }
+    methods:  GET
+
+herramientas_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Herramienta:new" }
+    methods:  [GET, POST]
+
+herramientas_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Herramienta:edit" }
+    methods:  [GET, POST]
+
+herramientas_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Herramienta:delete" }
+    methods:  DELETE

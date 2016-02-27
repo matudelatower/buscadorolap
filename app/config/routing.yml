@@ -1,0 +1,9 @@
+theme:
+    resource: "@ThemeBundle/Resources/config/routing.yml"
+    prefix:   /theme
+
+app:
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix:   /
+
+

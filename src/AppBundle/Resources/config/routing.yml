@@ -1,0 +1,11 @@
+app_organizacion:
+    resource: "@AppBundle/Resources/config/routing/organizacion.yml"
+    prefix:   /organizacion
+
+app_herramientas:
+    resource: "@AppBundle/Resources/config/routing/herramienta.yml"
+    prefix:   /herramientas
+
+app_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }

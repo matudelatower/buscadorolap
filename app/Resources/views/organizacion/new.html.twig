@@ -1,0 +1,97 @@
+{% extends 'ThemeBundle:Default:layout_base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/theme/css/application.css') }}">
+    <style>
+        body.dragging, body.dragging * {
+            cursor: move !important;
+        }
+
+        .dragged {
+            position: absolute;
+            opacity: 0.5;
+            z-index: 2000;
+        }
+
+        ol.herramientas li.placeholder {
+            position: relative;
+            /** More li styles **/
+        }
+
+        ol.herramientas li.placeholder:before {
+            position: absolute;
+            /** Define arrowhead **/
+        }
+    </style>
+{% endblock stylesheets %}
+{% block body %}
+    <h1>Organización</h1>
+
+    {{ form_start(form) }}
+    {#{{ form_widget(form) }}#}
+    {{ form_row(form.nombre) }}
+    {{ form_row(form.cuit) }}
+    {{ form_row(form.domicilio) }}
+    {{ form_row(form.localidad) }}
+    {{ form_row(form.provinciaEstado) }}
+    {{ form_row(form.pais) }}
+    {{ form_rest(form) }}
+
+        {#{{ form_row(form.libre) }}#}
+        {#{{ form_row(form.libre) }}#}
+        {#{{ form_label(form.libre) }}#}
+
+    {#<ol class='herramientas list-group'>#}
+
+        {#<li class="list-group-item"#}
+            {#data-id="{{ form.children.libre.vars.id }}">{{ form.children.libre.vars.name | humanize | capitalize }}</li>#}
+        {#<li class="list-group-item"#}
+            {#data-id="{{ form.children.windowsXp.vars.id }}">{{ form.children.windowsXp.vars.name | humanize | capitalize }}</li>#}
+        {#<li class="list-group-item"#}
+            {#data-id="{{ form.children.web.vars.id }}">{{ form.children.web.vars.name | humanize | capitalize }}</li>#}
+        {#<li class="list-group-item"#}
+            {#data-id="{{ form.children.facilidadInstalacion.vars.id }}">{{ form.children.facilidadInstalacion.vars.name | humanize | capitalize }}</li>#}
+        {#<li class="list-group-item"#}
+            {#data-id="{{ form.children.curvaAprendizaje.vars.id }}">{{ form.children.curvaAprendizaje.vars.name | humanize | capitalize }}</li>#}
+        {#<li class="list-group-item"#}
+            {#data-id="{{ form.children.noUtilizaSql.vars.id }}">{{ form.children.noUtilizaSql.vars.name | humanize | capitalize }}</li>#}
+        {#<li class="list-group-item"#}
+            {#data-id="{{ form.children.extensionExcel.vars.id }}">{{ form.children.extensionExcel.vars.name | humanize | capitalize }}</li>#}
+        {#<li class="list-group-item"#}
+            {#data-id="{{ form.children.clienteServidor.vars.id }}">{{ form.children.clienteServidor.vars.name | humanize | capitalize }}</li>#}
+        {#<li class="list-group-item"#}
+            {#data-id="{{ form.children.ayudaOnline.vars.id }}">{{ form.children.ayudaOnline.vars.name | humanize | capitalize }}</li>#}
+        {#<li class="list-group-item"#}
+            {#data-id="{{ form.children.etl.vars.id }}">{{ form.children.etl.vars.name | humanize | capitalize }}</li>#}
+    {#</ol>#}
+    <input class="btn btn-primary" type="submit" value="Crear"/>
+    <div class="hidden">
+        {{ form_end(form) }}
+    </div>
+
+
+    <a class="btn btn-default" href="{{ path('organizacion_index') }}">Volver</a>
+{% endblock %}
+
+{% block javascripts %}
+    {#<script type="text/javascript" src="{{ asset('bundles/theme/js/jquery-sortable-min.js') }}"></script>#}
+    {#<script>#}
+        {#$(function () {#}
+            {#var herramientas = $("ol.herramientas").sortable({#}
+                {#group: 'herramientas',#}
+                {#onDrop: function ($item, container, _super) {#}
+{#//                    console.log($item.index());#}
+{#//                    console.log($item.data('id'));#}
+                    {#var top = 10;#}
+                    {#var jsonHerr = herramientas.sortable("serialize").get();#}
+                    {#$.each(jsonHerr[0], function (i, obj) {#}
+                        {#//use obj.id and obj.name here, for example:#}
+                        {#console.log(obj.id);#}
+                        {#$('#' + obj.id).val(top - i);#}
+                    {#});#}
+
+                    {#_super($item, container);#}
+                {#}#}
+            {#});#}
+        {#});#}
+    {#</script>#}
+{% endblock javascripts %}

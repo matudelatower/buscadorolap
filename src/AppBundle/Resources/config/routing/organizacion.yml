@@ -1,0 +1,24 @@
+organizacion_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Organizacion:index" }
+    methods:  GET
+
+organizacion_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Organizacion:show" }
+    methods:  GET
+
+organizacion_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Organizacion:new" }
+    methods:  [GET, POST]
+
+organizacion_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Organizacion:edit" }
+    methods:  [GET, POST]
+
+organizacion_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Organizacion:delete" }
+    methods:  DELETE

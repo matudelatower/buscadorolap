@@ -1,0 +1,67 @@
+{% extends 'ThemeBundle:Default:layout_base.html.twig' %}
+
+{% block body %}
+    <h1>Herramienta</h1>
+
+    <table>
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ herramientum.id }}</td>
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <td>{{ herramientum.nombre }}</td>
+        </tr>
+        <tr>
+            <th>Empresa</th>
+            <td>{{ herramientum.empresa }}</td>
+        </tr>
+        <tr>
+            <th>Libre</th>
+            <td>{{ herramientum.libre }}</td>
+        </tr>
+        <tr>
+            <th>Windows xp</th>
+            <td>{{ herramientum.windowsXp }}</td>
+        </tr>
+        <tr>
+            <th>Web</th>
+            <td>{{ herramientum.web }}</td>
+        </tr>
+        <tr>
+            <th>Facilidad instalacion</th>
+            <td>{{ herramientum.facilidadInstalacion }}</td>
+        </tr>
+        <tr>
+            <th>Curva aprendizaje</th>
+            <td>{{ herramientum.curvaAprendizaje }}</td>
+        </tr>
+        <tr>
+            <th>No utiliza sql</th>
+            <td>{{ herramientum.noUtilizaSql }}</td>
+        </tr>
+        <tr>
+            <th>Extension excel</th>
+            <td>{{ herramientum.extensionExcel }}</td>
+        </tr>
+        <tr>
+            <th>Cliente/servidor</th>
+            <td>{{ herramientum.clienteServidor }}</td>
+        </tr>
+        <tr>
+            <th>Ayudaonline</th>
+            <td>{{ herramientum.ayudaOnline }}</td>
+        </tr>
+        <tr>
+            <th>Etl</th>
+            <td>{{ herramientum.etl }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <a class="btn-default" href="{{ path('herramientas_index') }}">Volver</a>
+    <a class="btn-primary" href="{{ path('herramientas_edit', { 'id': herramientum.id }) }}">Editar</a>
+    {{ form_start(delete_form) }}
+    <input type="submit" value="Eliminar">
+    {{ form_end(delete_form) }}
+{% endblock %}

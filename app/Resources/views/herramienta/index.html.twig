@@ -1,0 +1,70 @@
+{% extends 'ThemeBundle:Default:layout_base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+
+                    <div class="card-title">
+                        <div class="title">Listado de Herramientas</div>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <table class="datatable table table-striped" cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Empresa</th>
+                            <th>Libre</th>
+                            <th>Windowsxp</th>
+                            <th>Web</th>
+                            <th>Facilidadinstalacion</th>
+                            <th>Curvaaprendizaje</th>
+                            <th>Noutilizasql</th>
+                            <th>Extensionexcel</th>
+                            <th>Clienteservidor</th>
+                            <th>Ayudaonline</th>
+                            <th>Etl</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for herramientum in herramientas %}
+                            <tr>
+                                <td>
+                                    <a href="{{ path('herramientas_show', { 'id': herramientum.id }) }}">{{ herramientum.id }}</a>
+                                </td>
+                                <td>{{ herramientum.nombre }}</td>
+                                <td>{{ herramientum.empresa }}</td>
+                                <td>{{ herramientum.libre }}</td>
+                                <td>{{ herramientum.windowsXp }}</td>
+                                <td>{{ herramientum.web }}</td>
+                                <td>{{ herramientum.facilidadInstalacion }}</td>
+                                <td>{{ herramientum.curvaAprendizaje }}</td>
+                                <td>{{ herramientum.noUtilizaSql }}</td>
+                                <td>{{ herramientum.extensionExcel }}</td>
+                                <td>{{ herramientum.clienteServidor }}</td>
+                                <td>{{ herramientum.ayudaOnline }}</td>
+                                <td>{{ herramientum.etl }}</td>
+                                <td>
+                                    <a class="btn btn-default" href="{{ path('herramientas_show', { 'id': herramientum.id }) }}"><span class="fa fa-eye"></span></a>
+                                    <a class="btn btn-default" href="{{ path('herramientas_edit', { 'id': herramientum.id }) }}"><span class="fa fa-edit"></span></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul>
+        <li>
+            <a href="{{ path('herramientas_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
