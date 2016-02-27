@@ -43,7 +43,7 @@ class OrganizacionController extends Controller {
 			$em->flush();
 
 
-			return $this->redirectToRoute( 'herramientas_show', array( 'id' => $organizacion->getId() ) );
+			return $this->redirectToRoute( 'organizacion_show', array( 'id' => $organizacion->getId() ) );
 
 		}
 
